@@ -14,15 +14,29 @@
 
     // Post create
     if(isset($_POST['create_btn'])) {
+
         $message = $_POST['message'];
 
-        $sql = "INSERT INTO posts (message)
-        VALUES ('$message')";
+        $posts = mysqli_query($conn, "SELECT * FROM posts");
 
-        if (mysqli_query($conn, $sql)) {
-            header('location:create.php');
+        if(mysqli_num_rows($posts) > 0) {
+
+            $sql = "UPDATE posts SET message='$message'";
+            if (mysqli_query($conn, $sql)) {
+                header('location:create.php');
+            } else {
+            echo "Error updating record: " . mysqli_error($conn);
+            }
+
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            $sql = "INSERT INTO posts (message)
+            VALUES ('$message')";
+
+            if (mysqli_query($conn, $sql)) {
+                header('location:create.php');
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
         }
         mysqli_close($conn);
     }
