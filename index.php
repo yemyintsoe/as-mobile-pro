@@ -28,23 +28,13 @@
 <body>
     <div class="container">
         <div class="row my-3">
-            <div class="col-6">
-                <h5 class="text-success">As Mobile Pro</h5>
-            </div>
-            <div class="col-6">
-                <a href="create.php" class="btn btn-primary btn-sm float-end"> + Add New Message</a>
-            </div>
             <?php
             if (mysqli_num_rows($posts) > 0) {
                 while($row = mysqli_fetch_assoc($posts)) {
             ?>
 
             <div class="col-md-12">
-                <div class="card shadow my-1">
-                    <div class="card-body">
-                        <div class="card-title h6"><?= $row['message'] ?></div>
-                    </div>
-                </div>
+            <div class="card-title h6"><?= $row['message'] ?></div>
             </div>
 
             <?php
