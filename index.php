@@ -1,5 +1,5 @@
 <?php
-    $servername = "127.0.0.1:3307";
+    $servername = "localhost";
     $dbuser = "root";
     $dbpass = "";
     $dbname = "as_mobile_pro";
