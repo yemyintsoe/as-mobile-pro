@@ -8,5 +8,5 @@
       - content (text)
 # step2
 - donwload "as-mobile-pro" github repo
-- paste & extract the zip folder in xampp/htdocs root folder
+- paste & extract the as-mobile-pro.zip folder in xampp/htdocs root folder
 - run localhost/as-mobile-pro
